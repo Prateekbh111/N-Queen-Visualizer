@@ -12,7 +12,7 @@ int consoleWidth = 113;
 int N = 0; 
 
 // Animation delay
-int delay = 300;   
+int delay = 350;   
 
 // Number of solution found yet
 int solNum = 1; 

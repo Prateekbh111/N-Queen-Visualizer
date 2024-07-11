@@ -27,7 +27,7 @@ void visualizerInit(void){
    cin >> N;
 }
 
-bool isSafe(const vector<vector<char>>& board, int row, int col) {
+bool isSafe(const vector<string>& board, int row, int col) {
     for (int i = 0; i < row; i++)
         if (board[i][col] == 'Q') return false;
     for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
@@ -37,7 +37,7 @@ bool isSafe(const vector<vector<char>>& board, int row, int col) {
     return true;
 }
 
-void solveNQueensUtil(vector<vector<char>>& board, int row) {
+void solveNQueensUtil(vector<string>& board, int row) {
     if (row >= N){
         updateBoard(N,0,"",false);
         cout << changeBg(to_string(solNum++) + addSuffix(solNum) +" Solution Found", 'G') << "\n\n";
@@ -75,7 +75,9 @@ void solveNQueens() {
       cout << changeColor(onCenter("Solution Doesn't exist!!!", consoleWidth),'R');
       return;
    }
-   vector<vector<char>> board(N, vector<char>(N, '.'));
+   string init = "";
+   for(int i = 0; i<N; i++) init += ".";
+   vector<string> board(N, init);
     clearBoard();
     drawEmptyBoard();
     solveNQueensUtil(board, 0);

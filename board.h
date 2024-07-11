@@ -11,7 +11,7 @@ void clearBoard();
 void updateBoard(int row, int col, string ch, bool isBad);
 
 //Draw the give board to the console
-void drawBoard(vector<vector<char>>& oard);
+void drawBoard(vector<string>& board);
 
 //Draw an empty baord to the console
 void drawEmptyBoard();
